@@ -105,7 +105,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(142, 20);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Baixar";
+            this.button3.Text = "INSIRA O LINK DO DOWNLOAD DO MOD PARA INSTALAÇÃO DIRETA ";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -115,6 +115,7 @@
             this.linkbox.Name = "linkbox";
             this.linkbox.Size = new System.Drawing.Size(406, 20);
             this.linkbox.TabIndex = 0;
+            this.linkbox.Text = "INSIRA O LINK DO DOWNLOAD DO MOD PARA INSTALAÇÃO DIRETA ";
             // 
             // Veiculos
             // 

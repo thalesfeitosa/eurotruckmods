@@ -61,6 +61,8 @@ namespace EutrotruckModsInstaller
             {
                 Directory.CreateDirectory(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod");
 
+                //realizar o link do linkbox com a ação do button 
+
             }
         }
 

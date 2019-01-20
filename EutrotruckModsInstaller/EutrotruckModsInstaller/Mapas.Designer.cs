@@ -35,6 +35,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.linkbox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(450, 84);
+            this.button1.Location = new System.Drawing.Point(505, 83);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 20);
             this.button1.TabIndex = 1;
@@ -69,7 +71,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(93, 84);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(351, 20);
+            this.textBox2.Size = new System.Drawing.Size(406, 20);
             this.textBox2.TabIndex = 3;
             // 
             // button3
@@ -84,11 +86,30 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // linkbox
+            // 
+            this.linkbox.Location = new System.Drawing.Point(93, 115);
+            this.linkbox.Name = "linkbox";
+            this.linkbox.Size = new System.Drawing.Size(406, 20);
+            this.linkbox.TabIndex = 9;
+            this.linkbox.Text = "INSIRA O LINK DO DOWNLOAD PARA INSTALAÇÃO DIRETA";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(505, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(142, 20);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Baixar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Mapas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 393);
+            this.Controls.Add(this.linkbox);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -112,5 +133,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox linkbox;
+        private System.Windows.Forms.Button button2;
     }
 }
