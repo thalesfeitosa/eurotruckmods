@@ -33,26 +33,29 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.linkbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(632, 151);
+            this.button1.Location = new System.Drawing.Point(487, 101);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 23);
+            this.button1.Size = new System.Drawing.Size(142, 20);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Instalar Mods";
+            this.button1.Text = "Instalar Mods Veiculos";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 198);
+            this.textBox1.Location = new System.Drawing.Point(55, 202);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(651, 219);
+            this.textBox1.Size = new System.Drawing.Size(680, 237);
             this.textBox1.TabIndex = 2;
             // 
             // button2
@@ -67,20 +70,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(72, 120);
+            this.textBox2.Location = new System.Drawing.Point(72, 101);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(409, 20);
             this.textBox2.TabIndex = 4;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(487, 121);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 19);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "...";
-            this.button3.UseVisualStyleBackColor = true;
-           //this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // label1
             // 
@@ -94,21 +87,51 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileName = " ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(72, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(216, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Ou insira o link do Download do Mod";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(487, 161);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(142, 20);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Baixar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // linkbox
+            // 
+            this.linkbox.Location = new System.Drawing.Point(75, 162);
+            this.linkbox.Name = "linkbox";
+            this.linkbox.Size = new System.Drawing.Size(406, 20);
+            this.linkbox.TabIndex = 0;
             // 
             // Veiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(794, 468);
+            this.Controls.Add(this.linkbox);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Veiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veiculos";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -120,8 +143,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox linkbox;
     }
 }

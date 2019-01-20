@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 
 
+
 namespace EutrotruckModsInstaller
 {
     public partial class Veiculos : Form
@@ -25,18 +26,44 @@ namespace EutrotruckModsInstaller
         {
             Form1 frm = new Form1();
             frm.ShowDialog();
-            this.Close();
+            Close();
         }
 
-        
-        private void button3_Click(object sender, EventArgs e)
+
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() != DialogResult.Cancel)
             {
                 textBox1.Text = ofd.FileName;
-            }
+                textBox2.Text = ofd.SafeFileName;
 
-            
-        }  
+                if (!Directory.Exists(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod"))
+                {
+                    Directory.CreateDirectory(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod");
+
+                    string veiculo = Path.GetFileName(ofd.FileName);
+
+                    FileInfo vei = new FileInfo(veiculo);
+
+                    vei.CopyTo(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod" + veiculo);
+
+                    MessageBox.Show(" Mod Veiculo Instalado com Sucesso!! ");
+                }
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod"))
+            {
+                Directory.CreateDirectory(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod");
+
+            }
+        }
+
+
     }
 }

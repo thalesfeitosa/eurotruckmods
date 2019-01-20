@@ -23,41 +23,43 @@ namespace EutrotruckModsInstaller
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = ofd.FileName;
                 textBox2.Text = ofd.SafeFileName;
             }
 
-            
-
-            if (!Directory.Exists(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod"))
+            if (!Directory.Exists (@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod"))
             {
                 Directory.CreateDirectory(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod");
-
-                string[] mod = 
-
-                foreach (string item in mod)
-                {
-                    File.Copy(item, @"C:\Users\thale\Documents\Euro Truck Simulator 2\mod");
-                }
-
+              
             }
+            string arquivo1 = Path.GetFileName(ofd.FileName);
 
-            
+            FileInfo fi = new FileInfo(arquivo1);
+
+            fi.CopyTo(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod" + arquivo1);
+
+            MessageBox.Show("Mod Mapas Instalado!!");
+                        
+
         }
+
+                  
+                          
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form1 frm = new Form1();
             frm.ShowDialog();
             this.Hide();
+        }
+
+        private void Mapas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
