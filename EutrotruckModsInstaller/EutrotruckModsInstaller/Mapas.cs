@@ -41,7 +41,7 @@ namespace EutrotruckModsInstaller
 
             fi.CopyTo(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod" + arquivo1);
 
-            //MessageBox.Show("Mod Mapas Instalado!!");
+            MessageBox.Show("Mod Mapas Instalado!!");
                         
 
         }
@@ -50,16 +50,18 @@ namespace EutrotruckModsInstaller
                           
         
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form1 frm = new Form1();
-            frm.ShowDialog();
-            this.Hide();
-        }
+        
 
         private void Mapas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.ShowDialog();
+            Close();
         }
     }
 }
