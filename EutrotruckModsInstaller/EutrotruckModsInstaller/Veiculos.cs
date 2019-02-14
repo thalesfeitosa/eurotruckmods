@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net;
 
 
 
@@ -15,6 +16,9 @@ namespace EutrotruckModsInstaller
 {
     public partial class Veiculos : Form
     {
+
+        WebClient wc = new WebClient();
+
         public Veiculos()
         {
             InitializeComponent();
@@ -57,15 +61,18 @@ namespace EutrotruckModsInstaller
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!Directory.Exists(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod"))
-            {
-                Directory.CreateDirectory(@"C:\Users\thale\Documents\Euro Truck Simulator 2\mod");
-
-                //realizar o link do linkbox com a ação do button 
-
-            }
+            wc.DownloadFileCompleted += new AsyncCompletedEventHandler(filedDownloadComplete);
+            Uri modveiculos = new Uri(linkbox.Text);
+            string fileName = Path.GetFileName(modveiculos.AbsolutePath);
+            //wc.DownloadFileAsync(modveiculos, Application.StartupPath + "/" + fileName);
+            wc.DownloadFileAsync(modveiculos, @"C:\Users\thale\Documents\Euro Truck Simulator 2\mod\Modveiculos.rar", true);
         }
 
+            private void filedDownloadComplete(object sender, AsyncCompletedEventArgs e)
+            {
+                MessageBox.Show("Download Completo! Mod Veiculos Instalado! :)");
+            }
 
-    }
+
+        }
 }

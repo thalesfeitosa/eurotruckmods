@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Net;
+
 
 
 namespace EutrotruckModsInstaller
 {
     public partial class Mapas : Form
     {
+
+        WebClient wc = new WebClient();
+
         public Mapas()
         {
             InitializeComponent();
@@ -63,5 +68,24 @@ namespace EutrotruckModsInstaller
             frm.ShowDialog();
             Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+                        
+        {
+            wc.DownloadFileCompleted += new AsyncCompletedEventHandler(filedDownloadComplete);
+            Uri modmapas = new Uri(linkbox.Text);
+            wc.DownloadFileAsync(modmapas, @"C:\Users\thale\Documents\Euro Truck Simulator 2\mod\Modmapas.rar",true); 
+        }
+
+        private void filedDownloadComplete(object sender, AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("Download Completo! Mod Mapas Instalado! :)"); 
+        }
+
+
+        //private void textBox2_TextChanged(object sender, EventArgs e)
+        
+
+        
     }
 }
